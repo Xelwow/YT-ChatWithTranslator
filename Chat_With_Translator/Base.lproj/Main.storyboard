@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,178 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chat_With_Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nPI-fi-jvc" customClass="ChatTableView" customModule="Chat_With_Translator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="67" width="375" height="544"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SendedMessage" rowHeight="80" id="GpM-a9-LjO" customClass="ChatCell" customModule="Chat_With_Translator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GpM-a9-LjO" id="DPY-xZ-EeZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-df-WvF" customClass="BubbleView" customModule="Chat_With_Translator" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="8" width="93.5" height="64"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7p-73-UZK">
+                                                            <rect key="frame" x="12" y="10" width="34.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                                            <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Привет" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-Fc-QsW">
+                                                            <rect key="frame" x="12" y="31" width="69.5" height="23"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                                            <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.48627450980392156" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="f7p-73-UZK" firstAttribute="leading" secondItem="wGg-df-WvF" secondAttribute="leading" constant="12" id="1VV-3Z-2DT"/>
+                                                        <constraint firstItem="1Kb-Fc-QsW" firstAttribute="leading" secondItem="wGg-df-WvF" secondAttribute="leading" constant="12" id="Dd7-y1-jcO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1Kb-Fc-QsW" secondAttribute="trailing" constant="12" id="Eex-Nz-hS4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1Kb-Fc-QsW" secondAttribute="bottom" constant="10" id="HsW-ss-By2"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f7p-73-UZK" secondAttribute="trailing" constant="12" id="cuQ-wS-Hss"/>
+                                                        <constraint firstItem="f7p-73-UZK" firstAttribute="top" secondItem="wGg-df-WvF" secondAttribute="top" constant="10" id="k1Z-92-gf9"/>
+                                                        <constraint firstItem="1Kb-Fc-QsW" firstAttribute="top" secondItem="f7p-73-UZK" secondAttribute="bottom" constant="1.5" id="ooE-Rl-73O"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="originTextLabel" destination="f7p-73-UZK" id="ige-Mj-Hb7"/>
+                                                        <outlet property="translatedTextLabel" destination="1Kb-Fc-QsW" id="4O1-KJ-gVl"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="wGg-df-WvF" secondAttribute="bottom" constant="8" id="0g2-p9-LVQ"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wGg-df-WvF" secondAttribute="trailing" constant="15" id="JaY-sQ-V1z"/>
+                                                <constraint firstItem="wGg-df-WvF" firstAttribute="leading" secondItem="DPY-xZ-EeZ" secondAttribute="leading" constant="15" id="RIa-Fp-PZC"/>
+                                                <constraint firstItem="wGg-df-WvF" firstAttribute="top" secondItem="DPY-xZ-EeZ" secondAttribute="top" constant="8" id="d7l-nT-Drg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bubbleView" destination="wGg-df-WvF" id="UKX-EV-qTR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecievedMessage" rowHeight="80" id="1y4-2Q-AdV" customClass="ChatCell" customModule="Chat_With_Translator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1y4-2Q-AdV" id="ST9-iw-xlr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdU-60-Rhm" customClass="BubbleView" customModule="Chat_With_Translator" customModuleProvider="target">
+                                                    <rect key="frame" x="284" y="8" width="76" height="64"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Привет" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqK-Uf-8H3">
+                                                            <rect key="frame" x="12" y="10" width="52" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                                            <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-Vm-0Ir">
+                                                            <rect key="frame" x="12" y="29" width="52" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                                            <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.92941176469999998" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="O4E-Vm-0Ir" firstAttribute="leading" secondItem="PdU-60-Rhm" secondAttribute="leading" constant="12" id="078-VH-Qka"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eqK-Uf-8H3" secondAttribute="trailing" constant="12" id="F10-dJ-SvY"/>
+                                                        <constraint firstItem="eqK-Uf-8H3" firstAttribute="top" secondItem="PdU-60-Rhm" secondAttribute="top" constant="10" id="OCT-c5-Q2s"/>
+                                                        <constraint firstAttribute="bottom" secondItem="O4E-Vm-0Ir" secondAttribute="bottom" constant="10" id="VM3-yY-3jF"/>
+                                                        <constraint firstItem="O4E-Vm-0Ir" firstAttribute="top" secondItem="eqK-Uf-8H3" secondAttribute="bottom" constant="1.5" id="VNz-It-3cA"/>
+                                                        <constraint firstItem="eqK-Uf-8H3" firstAttribute="leading" secondItem="PdU-60-Rhm" secondAttribute="leading" constant="12" id="fda-vI-PsC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="O4E-Vm-0Ir" secondAttribute="trailing" constant="12" id="pbd-jZ-h50"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="originTextLabel" destination="eqK-Uf-8H3" id="SY2-zU-cV2"/>
+                                                        <outlet property="translatedTextLabel" destination="O4E-Vm-0Ir" id="khv-tC-UGZ"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="PdU-60-Rhm" secondAttribute="trailing" constant="15" id="Lbk-Cr-OvH"/>
+                                                <constraint firstItem="PdU-60-Rhm" firstAttribute="top" secondItem="ST9-iw-xlr" secondAttribute="top" constant="8" id="tjW-16-22S"/>
+                                                <constraint firstAttribute="bottom" secondItem="PdU-60-Rhm" secondAttribute="bottom" constant="8" id="u8J-IT-V6t"/>
+                                                <constraint firstItem="PdU-60-Rhm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ST9-iw-xlr" secondAttribute="leading" constant="15" id="z5a-eD-EO2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bubbleView" destination="PdU-60-Rhm" id="NUC-1d-CHg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFf-Aw-IwE" customClass="ChatTextField" customModule="Chat_With_Translator" customModuleProvider="target">
+                                <rect key="frame" x="6" y="619" width="363" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.29803921568627451" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TranslatorLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Q4j-sx-02l">
+                                <rect key="frame" x="116.5" y="38" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rY-bj-DFo" customClass="BubbleView" customModule="Chat_With_Translator" customModuleProvider="target">
+                                <rect key="frame" x="140" y="301" width="93.5" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXP-GA-mgc">
+                                        <rect key="frame" x="12" y="10" width="69.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rZ-u2-Dvr">
+                                        <rect key="frame" x="12" y="29" width="69.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                        <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.48627450979999998" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6rZ-u2-Dvr" secondAttribute="bottom" constant="10" id="6pQ-NJ-cgv"/>
+                                    <constraint firstItem="sXP-GA-mgc" firstAttribute="top" secondItem="3rY-bj-DFo" secondAttribute="top" constant="10" id="Bkh-7K-8NW"/>
+                                    <constraint firstItem="6rZ-u2-Dvr" firstAttribute="leading" secondItem="3rY-bj-DFo" secondAttribute="leading" constant="12" id="G5u-qD-oZ4"/>
+                                    <constraint firstItem="6rZ-u2-Dvr" firstAttribute="top" secondItem="sXP-GA-mgc" secondAttribute="bottom" constant="1.5" id="Xdv-CG-0iO"/>
+                                    <constraint firstItem="sXP-GA-mgc" firstAttribute="leading" secondItem="3rY-bj-DFo" secondAttribute="leading" constant="12" id="h5v-6R-DsR"/>
+                                    <constraint firstAttribute="trailing" secondItem="sXP-GA-mgc" secondAttribute="trailing" constant="12" id="mMy-RK-e7P"/>
+                                    <constraint firstAttribute="trailing" secondItem="6rZ-u2-Dvr" secondAttribute="trailing" constant="12" id="voE-HR-iTE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="originTextLabel" destination="sXP-GA-mgc" id="9EP-OJ-H0D"/>
+                                    <outlet property="translatedTextLabel" destination="6rZ-u2-Dvr" id="8KG-Da-mh5"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bubbleView" destination="3rY-bj-DFo" id="FjR-iv-cmj"/>
+                        <outlet property="chatTableView" destination="nPI-fi-jvc" id="dW5-Qj-yMi"/>
+                        <outlet property="textField" destination="iFf-Aw-IwE" id="Xtf-C8-1TB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qLt-ln-hJD"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TranslatorLogo" width="143.5" height="21.5"/>
+    </resources>
 </document>
