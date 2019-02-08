@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		84067B4221F8C2F800EBB8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B4121F8C2F800EBB8D5 /* AppDelegate.swift */; };
-		84067B4421F8C2F800EBB8D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B4321F8C2F800EBB8D5 /* ViewController.swift */; };
+		84067B4421F8C2F800EBB8D5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B4321F8C2F800EBB8D5 /* ChatViewController.swift */; };
 		84067B4921F8C2FC00EBB8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84067B4821F8C2FC00EBB8D5 /* Assets.xcassets */; };
 		84067B4C21F8C2FC00EBB8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84067B4A21F8C2FC00EBB8D5 /* LaunchScreen.storyboard */; };
 		84067B5721F8C2FC00EBB8D5 /* Chat_With_TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B5621F8C2FC00EBB8D5 /* Chat_With_TranslatorTests.swift */; };
 		84067B6221F8C2FC00EBB8D5 /* Chat_With_TranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B6121F8C2FC00EBB8D5 /* Chat_With_TranslatorUITests.swift */; };
-		84067B7021F8C4E400EBB8D5 /* ChatControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B6F21F8C4E400EBB8D5 /* ChatControls.swift */; };
+		84067B7021F8C4E400EBB8D5 /* ChatTableViewControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84067B6F21F8C4E400EBB8D5 /* ChatTableViewControls.swift */; };
 		842A3CE721F9C27A00E86DFB /* ChatTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A3CE621F9C27A00E86DFB /* ChatTextField.swift */; };
+		84A90C52220C88CD00A4092B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A90C50220C88CD00A4092B /* Main.storyboard */; };
 		84AF75122205C2EF00114957 /* CWTSpechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF75112205C2EF00114957 /* CWTSpechRecognizer.swift */; };
 		84AFDC6D21FA01260035ED62 /* ChangeLanguageSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AFDC6C21FA01260035ED62 /* ChangeLanguageSwitch.swift */; };
 		84B5328B2201BCCE00F66FBB /* YandexTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5328A2201BCCE00F66FBB /* YandexTranslator.swift */; };
-		84CED8E021FA0ED800CA4F64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CED8DE21FA0ED800CA4F64 /* Main.storyboard */; };
 		84F1551122006A8400532351 /* ChangeLanguageSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F1551022006A8400532351 /* ChangeLanguageSwitch.xib */; };
 		84F1551522006E4D00532351 /* ChatTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F1551422006E4D00532351 /* ChatTextField.xib */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		84067B3E21F8C2F800EBB8D5 /* Chat_With_Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat_With_Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84067B4121F8C2F800EBB8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84067B4321F8C2F800EBB8D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84067B4321F8C2F800EBB8D5 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		84067B4821F8C2FC00EBB8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84067B4B21F8C2FC00EBB8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84067B4D21F8C2FC00EBB8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,12 +53,12 @@
 		84067B5D21F8C2FC00EBB8D5 /* Chat_With_TranslatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Chat_With_TranslatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84067B6121F8C2FC00EBB8D5 /* Chat_With_TranslatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_With_TranslatorUITests.swift; sourceTree = "<group>"; };
 		84067B6321F8C2FC00EBB8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84067B6F21F8C4E400EBB8D5 /* ChatControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatControls.swift; sourceTree = "<group>"; };
+		84067B6F21F8C4E400EBB8D5 /* ChatTableViewControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewControls.swift; sourceTree = "<group>"; };
 		842A3CE621F9C27A00E86DFB /* ChatTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextField.swift; sourceTree = "<group>"; };
+		84A90C51220C88CD00A4092B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84AF75112205C2EF00114957 /* CWTSpechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWTSpechRecognizer.swift; sourceTree = "<group>"; };
 		84AFDC6C21FA01260035ED62 /* ChangeLanguageSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageSwitch.swift; sourceTree = "<group>"; };
 		84B5328A2201BCCE00F66FBB /* YandexTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexTranslator.swift; sourceTree = "<group>"; };
-		84CED8DF21FA0ED800CA4F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84F1551022006A8400532351 /* ChangeLanguageSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeLanguageSwitch.xib; sourceTree = "<group>"; };
 		84F1551422006E4D00532351 /* ChatTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTextField.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,16 +112,12 @@
 			isa = PBXGroup;
 			children = (
 				84067B4121F8C2F800EBB8D5 /* AppDelegate.swift */,
-				84067B4321F8C2F800EBB8D5 /* ViewController.swift */,
-				84067B4821F8C2FC00EBB8D5 /* Assets.xcassets */,
-				84CED8DE21FA0ED800CA4F64 /* Main.storyboard */,
 				84067B4A21F8C2FC00EBB8D5 /* LaunchScreen.storyboard */,
+				84735A98220C252D006A3954 /* ChatTextField */,
+				84735A97220C251C006A3954 /* ChatViewController */,
+				84067B4821F8C2FC00EBB8D5 /* Assets.xcassets */,
+				84A90C50220C88CD00A4092B /* Main.storyboard */,
 				84067B4D21F8C2FC00EBB8D5 /* Info.plist */,
-				84067B6F21F8C4E400EBB8D5 /* ChatControls.swift */,
-				842A3CE621F9C27A00E86DFB /* ChatTextField.swift */,
-				84AFDC6C21FA01260035ED62 /* ChangeLanguageSwitch.swift */,
-				84F1551022006A8400532351 /* ChangeLanguageSwitch.xib */,
-				84F1551422006E4D00532351 /* ChatTextField.xib */,
 				84AF75112205C2EF00114957 /* CWTSpechRecognizer.swift */,
 				84B5328A2201BCCE00F66FBB /* YandexTranslator.swift */,
 			);
@@ -144,6 +140,34 @@
 				84067B6321F8C2FC00EBB8D5 /* Info.plist */,
 			);
 			path = Chat_With_TranslatorUITests;
+			sourceTree = "<group>";
+		};
+		84735A97220C251C006A3954 /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84067B6F21F8C4E400EBB8D5 /* ChatTableViewControls.swift */,
+				84067B4321F8C2F800EBB8D5 /* ChatViewController.swift */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		84735A98220C252D006A3954 /* ChatTextField */ = {
+			isa = PBXGroup;
+			children = (
+				842A3CE621F9C27A00E86DFB /* ChatTextField.swift */,
+				84F1551422006E4D00532351 /* ChatTextField.xib */,
+				84735A99220C2564006A3954 /* ChangeLanguageSwitch */,
+			);
+			path = ChatTextField;
+			sourceTree = "<group>";
+		};
+		84735A99220C2564006A3954 /* ChangeLanguageSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				84AFDC6C21FA01260035ED62 /* ChangeLanguageSwitch.swift */,
+				84F1551022006A8400532351 /* ChangeLanguageSwitch.xib */,
+			);
+			path = ChangeLanguageSwitch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,11 +274,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A90C52220C88CD00A4092B /* Main.storyboard in Resources */,
 				84F1551522006E4D00532351 /* ChatTextField.xib in Resources */,
 				84067B4C21F8C2FC00EBB8D5 /* LaunchScreen.storyboard in Resources */,
 				84F1551122006A8400532351 /* ChangeLanguageSwitch.xib in Resources */,
 				84067B4921F8C2FC00EBB8D5 /* Assets.xcassets in Resources */,
-				84CED8E021FA0ED800CA4F64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,9 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84067B4421F8C2F800EBB8D5 /* ViewController.swift in Sources */,
+				84067B4421F8C2F800EBB8D5 /* ChatViewController.swift in Sources */,
 				84B5328B2201BCCE00F66FBB /* YandexTranslator.swift in Sources */,
-				84067B7021F8C4E400EBB8D5 /* ChatControls.swift in Sources */,
+				84067B7021F8C4E400EBB8D5 /* ChatTableViewControls.swift in Sources */,
 				84067B4221F8C2F800EBB8D5 /* AppDelegate.swift in Sources */,
 				84AF75122205C2EF00114957 /* CWTSpechRecognizer.swift in Sources */,
 				842A3CE721F9C27A00E86DFB /* ChatTextField.swift in Sources */,
@@ -329,10 +353,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		84CED8DE21FA0ED800CA4F64 /* Main.storyboard */ = {
+		84A90C50220C88CD00A4092B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84CED8DF21FA0ED800CA4F64 /* Base */,
+				84A90C51220C88CD00A4092B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -471,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "xelwow.Chat-With-Translator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -490,7 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "xelwow.Chat-With-Translator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

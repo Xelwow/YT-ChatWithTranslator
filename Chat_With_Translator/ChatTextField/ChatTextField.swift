@@ -45,7 +45,7 @@ class ChatTextField : UIView, UITextFieldDelegate, ChangeLanguageSwitchDelegate,
     var speechRecognizer = CWTSpeechRecognizer()
     var delegate : ChatTextFieldDelegate?
     var firstLanguage = LanguageStruct(placeholder: "Русский", locale: "ru_RU", lang : "ru", recordingPlaceholder : "Говорите...")
-    var secondLanguage = LanguageStruct(placeholder: "Английский", locale: "en-US", lang : "en", recordingPlaceholder : "Speak...")
+    var secondLanguage = LanguageStruct(placeholder: "English", locale: "en-US", lang : "en", recordingPlaceholder : "Speak...")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -85,6 +85,10 @@ class ChatTextField : UIView, UITextFieldDelegate, ChangeLanguageSwitchDelegate,
     @IBAction func actionButtonTapped( sender : Any){
         if sendingNotRecording {
             delegate?.sendMessage()
+            textField.text = ""
+            changeImages()
+            sendingNotRecording = false
+            
         }
         else{
             let audioSession = AVAudioSession.sharedInstance()
@@ -121,6 +125,12 @@ class ChatTextField : UIView, UITextFieldDelegate, ChangeLanguageSwitchDelegate,
             textField.attributedPlaceholder = NSAttributedString(string: secondLanguage.placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 0.8)])
             languageChanged = true
         }
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        sendingNotRecording = false
+        changeImages()
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -171,15 +181,17 @@ class ChatTextField : UIView, UITextFieldDelegate, ChangeLanguageSwitchDelegate,
             self.actionButton.frame = CGRect(x: self.actionButton.frame.origin.x, y: self.actionButton.frame.origin.y + 2, width: self.actionButton.frame.width
                 , height: self.actionButton.frame.height - 4)
         }
-        if sendingNotRecording {
-            actionButton.setImage(UIImage(named: "Mic"), for: .normal)
+        if self.sendingNotRecording {
+            self.actionButton.setImage(UIImage(named: "Mic"), for: .normal)
         }
         else{
-            actionButton.setImage(UIImage(named: "Send"), for: .normal)
+            self.actionButton.setImage(UIImage(named: "Send"), for: .normal)
         }
         UIView.animate(withDuration: 0.2) {
             self.actionButton.frame = CGRect(x: self.actionButton.frame.origin.x, y: self.actionButton.frame.origin.y - 2, width: self.actionButton.frame.width
                 , height: self.actionButton.frame.height + 4)
         }
+        
+        
     }
 }

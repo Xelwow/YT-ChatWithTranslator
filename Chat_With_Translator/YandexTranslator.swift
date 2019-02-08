@@ -9,10 +9,8 @@
 import Foundation
 
 class YTUrl {
-    static var YandexTranslator = "https://translate.yandex.net/api/v1.5/tr.json"
-    static var languageDetection = "/detect"
-    static var translation = "/translate"
-    static var ApiKey = "trnsl.1.1.20190204T084745Z.e884112d5c442fb3.f0992f7f3250d196508c535bb38bd68bc18d236f"
+    static var languageDetection = "https://translate.yandex.net/api/v1.5/tr.json/detect"
+    static var translation = "https://translate.yandex.net/api/v1.5/tr.json/translate"
 }
 
 struct TranslationResponse : Codable {
@@ -34,19 +32,20 @@ class YandexTranslator {
     
     var delegate : YandexTranslatorDelegate?
     
-    private var ApiKey = "trnsl.1.1.20190204T084745Z.e884112d5c442fb3.f0992f7f3250d196508c535bb38bd68bc18d236f"
+    private var ApiKey = ""
     
     
-    init(){
-        
-    }
     init(ApiKey: String){
+        self.ApiKey = ApiKey
+    }
+    
+    func setApiKey(ApiKey : String){
         self.ApiKey = ApiKey
     }
     
     private func getTranslation(text : String, translation language : String){
         
-        let urlStr = "\(YTUrl.YandexTranslator)\(YTUrl.translation)?key=\(ApiKey)&text=\(text)&lang=\(language)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlStr = "\(YTUrl.translation)?key=\(ApiKey)&text=\(text)&lang=\(language)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         let url = URL(string: urlStr!)!
         var request = URLRequest(url: url)
@@ -58,8 +57,9 @@ class YandexTranslator {
             print(data.debugDescription)
             if error != nil {
                 print(error)
+                return
             }
-            else {
+            if httpResponse?.statusCode == 200 {
                 guard let data = data else {return}
                 do {
                     let decoder = JSONDecoder()
@@ -72,12 +72,26 @@ class YandexTranslator {
                     return
                 }
             }
+            else {
+                switch httpResponse?.statusCode {
+                case 401 :
+                    print("Неправильный API-ключ")
+                    break
+                case 402 :
+                    print("API-ключ заблокирован")
+                    break
+                case 404 :
+                    print("Превышено суточное ограничение на объем переведенного текста")
+                    break
+                default : break
+                }
+            }
         }
         task.resume()
     }
     
     func translate(text: String, hint : String){
-        let urlStr = "\(YTUrl.YandexTranslator)\(YTUrl.languageDetection)?key=\(YTUrl.ApiKey)&text=\(text)&hint=\(hint)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlStr = "\(YTUrl.languageDetection)?key=\(ApiKey)&text=\(text)&hint=\(hint)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         let url = URL(string: urlStr!)!
         var request = URLRequest(url: url)
@@ -89,8 +103,9 @@ class YandexTranslator {
             print(data.debugDescription)
             if error != nil {
                 print(error)
+                return
             }
-            else {
+            if httpResponse?.statusCode == 200 {
                 guard let data = data else {return}
                 do {
                     let decoder = JSONDecoder()
@@ -102,6 +117,29 @@ class YandexTranslator {
                 }
                 catch{
                     return
+                }
+            }
+            else {
+                switch httpResponse?.statusCode {
+                case 401 :
+                    print("Неправильный API-ключ")
+                    break
+                case 402 :
+                    print("API-ключ заблокирован")
+                    break
+                case 404 :
+                    print("Превышено суточное ограничение на объем переведенного текста")
+                    break
+                case 413 :
+                    print("Превышен максимально допустимый размер текста")
+                    break
+                case 422 :
+                    print("Текст не может быть переведен")
+                    break
+                case 501 :
+                    print("Заданное направление перевода не поддерживается")
+                    break
+                default : break
                 }
             }
         }
